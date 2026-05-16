@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>POP ATELIER — From pocket to wrist. Bracelets pour la Royal Pop.</title>
+<meta name="description" content="Bracelets en silicone premium pensés pour celles et ceux qui veulent porter leur AP×Swatch Royal Pop au poignet. Lancement imminent — rejoignez la waitlist." />
+<meta property="og:title" content="POP ATELIER — From pocket to wrist" />
+<meta property="og:description" content="Bracelets compatibles avec la Royal Pop. Lancement imminent." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #0a0a0a;
+  --paper: #f5f1ea;
+  --acid: #d4ff00;
+  --blood: #ff2d1f;
+  --ash: #8a8a85;
+  --line: rgba(10,10,10,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; }
+
+/* === TOPBAR === */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: rgba(245, 241, 234, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+
+.logo span { color: var(--blood); }
+
+.topbar nav {
+  display: flex;
+  gap: 28px;
+}
+
+.topbar nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  position: relative;
+  padding: 4px 0;
+}
+
+.topbar nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--ink);
+  transition: width 0.3s ease;
+}
+
+.topbar nav a:hover::after { width: 100%; }
+
+.cta-mini {
+  background: var(--ink);
+  color: var(--paper) !important;
+  padding: 8px 14px !important;
+  border-radius: 999px;
+}
+
+.cta-mini::after { display: none; }
+
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  padding: 120px 32px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+}
+
+.hero-left { position: relative; z-index: 2; }
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  padding: 6px 14px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+}
+
+.hero-tag .dot {
+  width: 8px; height: 8px;
+  background: var(--blood);
+  border-radius: 50%;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.75); }
+}
+
+.hero h1 {
+  font-size: clamp(56px, 9vw, 140px);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  margin-bottom: 32px;
+}
+
+.hero h1 .italic { font-style: italic; font-weight: 400; color: var(--blood); }
+.hero h1 .underline { text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 8px; }
+
+.hero-sub {
+  font-size: 20px;
+  line-height: 1.45;
+  max-width: 460px;
+  margin-bottom: 40px;
+  color: #2a2a2a;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background: var(--blood);
+  border-color: var(--blood);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn-ghost:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn .arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* === HERO VISUAL === */
+.hero-right {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+}
+
+.watch-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch-bg {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background: var(--acid);
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.6;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -30px) scale(1.05); }
+}
+
+.watch-photo {
+  position: relative;
+  z-index: 2;
+  max-width: 110%;
+  width: 110%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(20px 20px 40px rgba(10,10,10,0.25));
+  animation: floatPhoto 6s ease-in-out infinite;
+}
+
+@keyframes floatPhoto {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-12px) rotate(0deg); }
+}
+
+.concept-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #888;
+  opacity: 0.6;
+}
+
+.side-label {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.side-label::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--ink);
+}
+
+.side-label.top-right { top: 60px; right: 0; }
+.side-label.bot-left { bottom: 40px; left: 0; }
+
+/* === MARQUEE === */
+.marquee {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 24px 0;
+  overflow: hidden;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 48px;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.marquee-item::after {
+  content: '✦';
+  color: var(--acid);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@keyframes scroll {
+  to { transform: translateX(-50%); }
+}
+
+/* === PROBLEM === */
+.problem {
+  padding: 120px 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.problem-text h2 {
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+
+.problem-text h2 .strike { text-decoration: line-through; text-decoration-color: var(--blood); color: var(--ash); }
+
+.problem-text p {
+  font-size: 19px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #2a2a2a;
+}
+
+.problem-text p:last-child {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.problem-visual {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparison {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #fff;
+  border: 2px solid var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.comp-half {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  position: relative;
+  min-height: 100%;
+}
+
+.comp-top {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.comp-half + .comp-half {
+  border-left: 2px solid var(--ink);
+  background: var(--acid);
+}
+
+.comp-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.comp-title {
+  font-size: 22px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.comp-img-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.comp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 280px;
+}
+
+.comp-half:first-child .comp-img {
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
+}
+
+/* === HOW IT WORKS === */
+.how {
+  padding: 120px 32px;
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+
+.how-header {
+  max-width: 1280px;
+  margin: 0 auto 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.how h2 {
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  max-width: 700px;
+}
+
+.how h2 em { color: var(--acid); font-style: italic; }
+
+.how-intro {
+  max-width: 320px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #c4c4c4;
+}
+
+.steps {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.step {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 32px;
+  position: relative;
+}
+
+.step-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 1;
+  color: var(--acid);
+  margin-bottom: 24px;
+}
+
+.step h3 {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.step p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #c4c4c4;
+}
+
+/* === COLORS === */
+.colors {
+  padding: 120px 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.colors-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.colors h2 {
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.colors h2 em { font-style: italic; }
+
+.colors-sub {
+  font-size: 17px;
+  color: #555;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.color-card {
+  background: #ededed;
+  border: 2px solid var(--ink);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.color-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.color-card-img {
+  aspect-ratio: 1;
+  background: #ededed;
+  overflow: hidden;
+  position: relative;
+}
+
+.color-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.color-card:hover .color-card-img img {
+  transform: scale(1.05);
+}
+
+.color-card-info {
+  padding: 18px 20px;
+  background: var(--paper);
+  border-top: 2px solid var(--ink);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.color-card-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.color-card-desc {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #666;
+}
+
+/* === PRODUCT === */
+.product {
+  padding: 120px 32px;
+  background: var(--paper);
+}
+
+.product-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.product-visual {
+  aspect-ratio: 4/5;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+}
+
+.product-visual .price-tag {
+  position: absolute;
+  top: 24px; right: 24px;
+  background: var(--paper);
+  padding: 16px 22px;
+  border: 2px solid var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 3;
+  transform: rotate(4deg);
+}
+
+.product-visual .price-tag strong {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 32px;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+  color: var(--blood);
+}
+
+.product-visual .big-text {
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(80px, 14vw, 200px);
+  line-height: 0.85;
+  color: rgba(212, 255, 0, 0.12);
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.product-photo-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 40px;
+}
+
+.product-photo {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+  transform: rotate(-4deg);
+  transition: transform 0.4s ease;
+}
+
+.product-photo:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.product-info h2 {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.product-info h2 em { font-style: italic; color: var(--blood); }
+
+.product-meta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-item .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #888;
+}
+
+.meta-item .value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.specs-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.specs-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.specs-list li span:first-child {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #555;
+}
+
+.specs-list li span:last-child {
+  font-weight: 600;
+}
+
+/* === WAITLIST === */
+.waitlist {
+  padding: 120px 32px;
+  background: var(--acid);
+  position: relative;
+  overflow: hidden;
+}
+
+.waitlist::before {
+  content: 'CHAT ✦ CHAT ✦ CHAT ✦ CHAT ✦ CHAT ✦ CHAT ✦ CHAT';
+  position: absolute;
+  top: 30px;
+  left: -50px;
+  right: -50px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 60px;
+  white-space: nowrap;
+  opacity: 0.15;
+  letter-spacing: -0.03em;
+}
+
+.waitlist-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.waitlist .tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 24px;
+}
+
+.waitlist h2 {
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.waitlist h2 em { font-style: italic; }
+
+.waitlist p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+.field label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.field input, .field select, .field textarea {
+  padding: 14px 16px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  transition: transform 0.15s ease;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.field textarea { resize: vertical; min-height: 90px; font-family: 'Fraunces', serif; font-size: 15px; }
+
+.btn-submit {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 18px 32px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border: 2px solid var(--ink);
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.btn-submit:hover {
+  background: var(--blood);
+  border-color: var(--ink);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.form-note {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+.success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.success.show { display: block; }
+
+.success h3 {
+  font-size: 32px;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.success p { font-size: 15px; line-height: 1.5; }
+
+.whatsapp-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 24px;
+  background: #25d366;
+  color: white !important;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  border: 2px solid var(--ink);
+}
+
+/* === CONTACT === */
+.contact-inner { text-align: center; }
+
+.contact-card {
+  max-width: 540px;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  padding: 36px 32px;
+  text-align: left;
+  position: relative;
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.contact-card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-avatar {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.contact-avatar-inner {
+  width: 100%;
+  height: 100%;
+  background: var(--ink);
+  color: var(--acid);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 30px;
+}
+
+.contact-avatar-inner span { color: var(--blood); }
+
+.contact-status {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  background: #25d366;
+  border: 3px solid var(--paper);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.contact-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.contact-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #555;
+}
+
+.contact-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  padding: 16px 0 4px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.contact-number:hover { color: var(--blood); }
+.contact-number.copied { color: #25d366; }
+
+.contact-number-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-align: center;
+  color: #888;
+  margin-bottom: 28px;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  padding: 20px 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border: 2px solid var(--ink);
+  transition: all 0.2s ease;
+  margin-bottom: 28px;
+}
+
+.contact-btn:hover {
+  background: var(--ink);
+  color: var(--acid);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--blood);
+}
+
+.contact-btn svg { flex-shrink: 0; }
+.contact-btn .arrow { transition: transform 0.2s ease; }
+.contact-btn:hover .arrow { transform: translateX(4px); }
+
+.contact-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #444;
+}
+
+.contact-meta-icon { font-size: 22px; }
+
+.contact-bottom-note {
+  margin-top: 32px !important;
+  font-size: 14px !important;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.contact-backup-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(10,10,10,0.2);
+  flex-wrap: wrap;
+}
+
+.contact-backup-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #777;
+}
+
+.contact-backup-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.contact-backup-link:hover { color: #25d366; }
+
+.contact-backup-arrow {
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.contact-backup-link:hover .contact-backup-arrow {
+  transform: translate(2px, -2px);
+}
+
+.copy-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--ink);
+  color: var(--acid);
+  padding: 14px 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* === FAQ === */
+.faq {
+  padding: 120px 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq h2 {
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.faq h2 em { font-style: italic; color: var(--blood); }
+
+.faq-item {
+  border-top: 1px solid var(--ink);
+  padding: 28px 0;
+  cursor: pointer;
+}
+
+.faq-item:last-child { border-bottom: 1px solid var(--ink); }
+
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.faq-q .icon {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.faq-item.open .faq-q .icon { transform: rotate(45deg); }
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.faq-item.open .faq-a {
+  max-height: 300px;
+  padding-top: 16px;
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 80px 32px 32px;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.footer-brand .logo {
+  color: var(--paper);
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  color: #999;
+  max-width: 320px;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 20px;
+  color: var(--acid);
+}
+
+.footer-col a {
+  display: block;
+  color: #c4c4c4;
+  text-decoration: none;
+  padding: 6px 0;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover { color: var(--paper); }
+
+.disclaimer {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 20px;
+  margin-bottom: 40px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #999;
+  font-style: italic;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #888;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .topbar { padding: 14px 20px; }
+  .topbar nav { gap: 14px; }
+  .topbar nav a:not(.cta-mini) { display: none; }
+
+  .hero { grid-template-columns: 1fr; padding: 100px 20px 40px; gap: 40px; }
+  .hero-right { height: 50vh; min-height: 350px; }
+  .side-label { display: none; }
+
+  .problem { grid-template-columns: 1fr; gap: 40px; padding: 80px 20px; }
+
+  .how { padding: 80px 20px; }
+  .how-header { flex-direction: column; align-items: flex-start; margin-bottom: 50px; }
+  .steps { grid-template-columns: 1fr; gap: 30px; }
+
+  .colors { padding: 80px 20px; }
+  .color-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .color-card-info { padding: 14px 16px; }
+  .color-card-name { font-size: 18px; }
+
+  .product { padding: 80px 20px; }
+  .product-inner { grid-template-columns: 1fr; gap: 40px; }
+
+  .waitlist { padding: 80px 20px; }
+  .contact-card { padding: 28px 20px; box-shadow: 5px 5px 0 var(--ink); }
+  .contact-number { font-size: 22px; }
+  .contact-meta { grid-template-columns: 1fr; gap: 14px; }
+  .contact-meta-item { flex-direction: row; }
+  .contact-backup-row { flex-direction: column; align-items: flex-start; gap: 6px; text-align: left; }
+
+  .faq { padding: 80px 20px; }
+  .faq-q { font-size: 18px; }
+
+  .marquee-item { font-size: 32px; gap: 40px; }
+
+  footer { padding: 60px 20px 24px; }
+  .footer-top { grid-template-columns: 1fr; gap: 30px; padding-bottom: 40px; margin-bottom: 30px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">pop atelier<span>.</span></div>
+  <nav>
+    <a href="#how">Comment ça marche</a>
+    <a href="#colors">Couleurs</a>
+    <a href="#faq">FAQ</a>
+    <a href="#waitlist" class="cta-mini">Nous écrire</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      <span class="mono">Pre-launch · Waitlist ouverte</span>
+    </div>
+    <h1>
+      De la <span class="italic">poche</span><br>
+      au <span class="underline">poignet.</span>
+    </h1>
+    <p class="hero-sub">
+      Bracelets en silicone premium pensés pour celles et ceux qui veulent porter leur Royal Pop comme une montre s'est toujours portée. Au poignet.
+    </p>
+    <div class="hero-actions">
+      <a href="#waitlist" class="btn btn-primary">
+        Écris-nous sur WhatsApp <span class="arrow">→</span>
+      </a>
+      <a href="#how" class="btn btn-ghost">
+        Comment ça marche
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="watch-stage">
+      <div class="watch-bg"></div>
+      <img class="watch-photo" src="images/bracciale-front.jpg" alt="Bracelet Pop Atelier avec module noir — vue de face" />
+    </div>
+    <div class="side-label top-right">Royal Pop · compatible</div>
+    <div class="side-label bot-left">100% silicone · 0% compromis</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-item">Porte-la comme tu veux</div>
+    <div class="marquee-item">De la poche au poignet</div>
+    <div class="marquee-item">4 couleurs. un seul drop.</div>
+    <div class="marquee-item">Fait pour la Royal Pop</div>
+    <div class="marquee-item">Porte-la comme tu veux</div>
+    <div class="marquee-item">De la poche au poignet</div>
+    <div class="marquee-item">4 couleurs. un seul drop.</div>
+    <div class="marquee-item">Fait pour la Royal Pop</div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="problem-text">
+    <h2>
+      Une montre<br>
+      <span class="strike">de poche.</span><br>
+      Vraiment ?
+    </h2>
+    <p>
+      La Royal Pop est extraordinaire. Le design, le mouvement mécanique, l'hommage aux années 80. Mais soyons honnêtes : en 2026, qui a vraiment encore une poche pour une montre de poche ?
+    </p>
+    <p>
+      La lanière en cuir est superbe. Au cou ou accrochée à un sac, elle fonctionne. Mais pour la porter tous les jours, au poignet, il faut autre chose.
+    </p>
+    <p>
+      → Il faut un bracelet. Il faut Pop Atelier.
+    </p>
+  </div>
+  <div class="problem-visual">
+    <div class="comparison">
+      <div class="comp-half">
+        <div class="comp-top">
+          <div class="comp-label">Stock</div>
+          <div class="comp-title">Lanière<br>en cuir</div>
+        </div>
+        <div class="comp-img-wrap">
+          <img src="images/laccio.png" alt="Royal Pop avec sa lanière d'origine au cou" class="comp-img" />
+        </div>
+        <div class="comp-label">→ Cou / sac</div>
+      </div>
+      <div class="comp-half">
+        <div class="comp-top">
+          <div class="comp-label">Pop Atelier</div>
+          <div class="comp-title">Bracelet<br>silicone</div>
+        </div>
+        <div class="comp-img-wrap">
+          <img src="images/bracciale-solo.jpg" alt="Bracelet Pop Atelier en silicone noir — vue de face" class="comp-img" />
+        </div>
+        <div class="comp-label">→ Poignet, tous les jours</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-header">
+    <h2>Trois étapes.<br>Trente <em>secondes.</em></h2>
+    <p class="how-intro">Aucun outil. Aucune modification permanente. Tout est réversible à tout moment : remets la lanière et tu retrouves la montre d'origine.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Retire la lanière</h3>
+      <p>Décroche délicatement la lanière en cuir d'origine du système de fixation de la Royal Pop. Garde-la précieusement — tu la remettras peut-être pour les grandes occasions.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Clipse ton Pop Atelier</h3>
+      <p>Notre système de fixation s'insère au même endroit que la lanière d'origine. Clic — c'est fait. Aucune vis, aucune colle, aucune rayure.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Porte-la. Partout.</h3>
+      <p>Douche, piscine, salle de sport, bureau, dîner. Le silicone médical résiste à tout. Tu rinces à l'eau, tu sèches, tu repars.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COLORS -->
+<section class="colors" id="colors">
+  <div class="colors-header">
+    <h2>Quatre couleurs.<br>Un seul <em>drop.</em></h2>
+    <p class="colors-sub">Quatre bracelets. Quatre mood. Édition limitée au lancement : uniquement les pièces produites, après c'est fini.</p>
+  </div>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-card-img">
+        <img src="images/color-black.jpg" alt="Bracelet Pop Atelier noir" loading="lazy" />
+      </div>
+      <div class="color-card-info">
+        <div class="color-card-name">Jet Black</div>
+        <div class="color-card-desc">Le défaut. Va avec tout.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-card-img">
+        <img src="images/color-white.jpg" alt="Bracelet Pop Atelier blanc" loading="lazy" />
+      </div>
+      <div class="color-card-info">
+        <div class="color-card-name">Arctic White</div>
+        <div class="color-card-desc">Propre, minimal, estival.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-card-img">
+        <img src="images/color-blue.jpg" alt="Bracelet Pop Atelier bleu" loading="lazy" />
+      </div>
+      <div class="color-card-info">
+        <div class="color-card-name">Electric Blue</div>
+        <div class="color-card-desc">Pop, mais sérieux.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-card-img">
+        <img src="images/color-green.jpg" alt="Bracelet Pop Atelier vert" loading="lazy" />
+      </div>
+      <div class="color-card-info">
+        <div class="color-card-name">Pop Green</div>
+        <div class="color-card-desc">Pour ceux qui ne passent pas inaperçus.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="product">
+  <div class="product-inner">
+    <div class="product-visual">
+      <div class="big-text">POP ATELIER</div>
+      <div class="price-tag">
+        Dès
+        <strong>CHF 65</strong>
+      </div>
+      <div class="product-photo-wrap">
+        <img src="images/bracciale-side.jpg" alt="Bracelet Pop Atelier avec module noir — vue 3/4" class="product-photo" />
+      </div>
+    </div>
+    <div class="product-info">
+      <h2>Le bracelet.<br><em>Pour celles et ceux qui savent.</em></h2>
+      <div class="product-meta">
+        <div class="meta-item">
+          <span class="label">Matériau</span>
+          <span class="value">Silicone FDA</span>
+        </div>
+        <div class="meta-item">
+          <span class="label">Boucle</span>
+          <span class="value">Acier 316L</span>
+        </div>
+        <div class="meta-item">
+          <span class="label">Tailles</span>
+          <span class="value">S / M / L</span>
+        </div>
+      </div>
+      <ul class="specs-list">
+        <li><span>Compatibilité</span><span>Royal Pop Lépine + Savonnette</span></li>
+        <li><span>Installation</span><span>Sans outil · 30 sec</span></li>
+        <li><span>Étanchéité</span><span>10 ATM</span></li>
+        <li><span>Hypoallergénique</span><span>Oui, certifié</span></li>
+        <li><span>Livraison</span><span>Monde entier</span></li>
+        <li><span>Prix</span><span>CHF 65 — 95</span></li>
+      </ul>
+      <a href="#waitlist" class="btn btn-primary">Demander des infos <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT WHATSAPP -->
+<section class="waitlist" id="waitlist">
+  <div class="waitlist-inner contact-inner">
+    <div class="tag">Direct · Sans intermédiaire</div>
+    <h2>Écris-nous<br><em>sur WhatsApp.</em></h2>
+    <p>Pas de formulaire, pas d'emails perdus. Des infos sur le lancement, réserver une couleur, une question technique ? Écris-nous directement. On répond en personne, généralement en moins d'une heure.</p>
+
+    <div class="contact-card">
+      <div class="contact-card-top">
+        <div class="contact-avatar">
+          <div class="contact-avatar-inner">W<span>.</span></div>
+          <div class="contact-status"></div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-name">Pop Atelier</div>
+          <div class="contact-tagline">en ligne · répond en général en 1h</div>
+        </div>
+      </div>
+
+      <div class="contact-number" id="contactNumber">+39 333 123 4567</div>
+      <div class="contact-number-label">Touche pour copier ou clique ci-dessous pour ouvrir le chat</div>
+
+      <a href="#" class="contact-btn" id="contactBtn" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+        </svg>
+        Ouvrir le chat WhatsApp
+        <span class="arrow">→</span>
+      </a>
+
+      <div class="contact-meta">
+        <div class="contact-meta-item">
+          <span class="contact-meta-icon">⚡</span>
+          <span>Réponse en ~1h</span>
+        </div>
+        <div class="contact-meta-item">
+          <span class="contact-meta-icon">🇫🇷</span>
+          <span>FR · IT · EN</span>
+        </div>
+        <div class="contact-meta-item">
+          <span class="contact-meta-icon">🔒</span>
+          <span>Conversation privée</span>
+        </div>
+      </div>
+
+      <div class="contact-backup-row">
+        <span class="contact-backup-label">Pas de réponse ? Numéro de secours :</span>
+        <a href="#" class="contact-backup-link" id="contactBackup" target="_blank">
+          <span id="contactBackupNumber">+41 77 207 00 84</span>
+          <span class="contact-backup-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <p class="contact-bottom-note">
+      Aucun chatbot. Aucune mailing list automatique. Juste une vraie personne de l'autre côté.
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <h2>Questions <em>légitimes.</em></h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Est-ce un produit officiel Swatch ou Audemars Piguet ? <span class="icon">+</span></div>
+    <div class="faq-a">Non. Pop Atelier est une marque indépendante. Nous ne sommes affiliés ni à Swatch Group ni à Audemars Piguet. Nous produisons des accessoires aftermarket compatibles avec la Royal Pop — exactement comme de nombreuses marques fabriquent des bracelets pour Apple Watch sans être Apple.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Est-ce que ça abîme ma Royal Pop ? <span class="icon">+</span></div>
+    <div class="faq-a">Absolument pas. Notre système de fixation est non-invasif et totalement réversible. Il s'insère au même endroit que la lanière d'origine, sans vis ni colle. Tu peux remettre la lanière à tout moment et retrouver la configuration d'usine.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Je peux toujours la porter en montre de poche ? <span class="icon">+</span></div>
+    <div class="faq-a">Oui. La lanière d'origine reste intacte. Pop Atelier est simplement une option supplémentaire : poignet quand tu veux, poche ou cou quand tu préfères.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Quand est le lancement ? <span class="icon">+</span></div>
+    <div class="faq-a">Nous finalisons la production du premier drop. La waitlist sert exactement à ça : ceux qui sont en liste accèdent au lancement en avant-première et nous aident à estimer le nombre de pièces à produire par couleur. La date exacte sera communiquée par WhatsApp aux membres de la waitlist.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Combien ça coûte ? <span class="icon">+</span></div>
+    <div class="faq-a">Le prix final sera entre CHF 65 et CHF 95 selon la couleur et la finition. Les premiers contacts WhatsApp bénéficient d'un tarif dédié sur le premier drop.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Vous livrez à l'international ? <span class="icon">+</span></div>
+    <div class="faq-a">Oui. Livraison mondiale avec suivi, gratuite au-dessus d'un certain montant. France, Suisse, Belgique, Europe, UK, USA, Japon — la Royal Pop est partout, nous aussi.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Je peux annuler la waitlist ? <span class="icon">+</span></div>
+    <div class="faq-a">Quand tu veux. S'inscrire n'est pas un achat : c'est juste un moyen d'être averti en avance et en priorité. Aucun paiement requis.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">pop atelier<span style="color:var(--blood)">.</span></div>
+        <p>Bracelets aftermarket pour celles et ceux qui veulent porter leur Royal Pop au poignet. Designés indépendamment, fabriqués avec soin. From pocket to wrist.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="#how">Comment ça marche</a>
+        <a href="#colors">Couleurs</a>
+        <a href="#waitlist">Waitlist</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="#" id="footerWhatsapp">WhatsApp</a>
+        <a href="mailto:hello@popatelier.ch">Email</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      Pop Atelier est une marque indépendante, non affiliée, sponsorisée ou approuvée par Swatch Group ou Audemars Piguet. « Royal Pop », « Royal Oak », « Swatch » et « Audemars Piguet » sont des marques déposées de leurs propriétaires respectifs. Nos produits sont des accessoires aftermarket conçus pour être compatibles avec la montre Royal Pop.
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Pop Atelier · Tous droits réservés</div>
+      <div>Made with care · Lausanne ↔ World</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// === FAQ Accordion ===
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// === WhatsApp Contact ===
+// Numéro principal
+const WHATSAPP_NUMBER = '41762979969';
+const WHATSAPP_DISPLAY = '+41 76 297 99 69';
+
+// Numéro de secours (si le principal ne répond pas)
+const WHATSAPP_BACKUP = '41772070084';
+const WHATSAPP_BACKUP_DISPLAY = '+41 77 207 00 84';
+
+const PRECOMPILED_MESSAGE = "Bonjour Pop Atelier ! J'ai vu votre site et je suis intéressé(e) par les bracelets pour la Royal Pop. Vous pouvez m'envoyer plus d'infos sur les couleurs et la disponibilité ?";
+
+const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(PRECOMPILED_MESSAGE)}`;
+const whatsappBackupUrl = `https://wa.me/${WHATSAPP_BACKUP}?text=${encodeURIComponent(PRECOMPILED_MESSAGE)}`;
+
+// Set primary number, button, and backup link
+document.getElementById('contactNumber').textContent = WHATSAPP_DISPLAY;
+document.getElementById('contactBtn').href = whatsappUrl;
+document.getElementById('footerWhatsapp').href = whatsappUrl;
+document.getElementById('contactBackup').href = whatsappBackupUrl;
+document.getElementById('contactBackupNumber').textContent = WHATSAPP_BACKUP_DISPLAY;
+
+// Tap-to-copy on primary number
+document.getElementById('contactNumber').addEventListener('click', () => {
+  navigator.clipboard.writeText(WHATSAPP_DISPLAY).then(() => {
+    const num = document.getElementById('contactNumber');
+    num.classList.add('copied');
+    const toast = document.createElement('div');
+    toast.className = 'copy-toast';
+    toast.textContent = '✓ Numéro copié';
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => {
+      toast.classList.remove('show');
+      num.classList.remove('copied');
+      setTimeout(() => toast.remove(), 300);
+    }, 1800);
+  });
+});
+
+// Tap-to-copy on backup number
+document.getElementById('contactBackupNumber').addEventListener('click', (e) => {
+  e.preventDefault();
+  navigator.clipboard.writeText(WHATSAPP_BACKUP_DISPLAY).then(() => {
+    const toast = document.createElement('div');
+    toast.className = 'copy-toast';
+    toast.textContent = '✓ Numéro de secours copié';
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 1800);
+  });
+});
+</script>
+
+</body>
+</html>
